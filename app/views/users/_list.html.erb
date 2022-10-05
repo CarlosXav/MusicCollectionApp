@@ -1,0 +1,23 @@
+<div class="container rounded shadow-lg p-3">
+    <% unless @users.blank? %>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <% for user in @users %>
+                <tr>
+                    <th scope="row"><%= user['id']%></th>
+                    <td><%= link_to "#{user['username']}", "users/#{user['id']}" %></td>
+                    <td><%= user['email']%></td>
+                </tr>            
+            <% end %>
+        </table>
+    
+
+    <% end %>
+</div>
+<div class="py-4"></div>

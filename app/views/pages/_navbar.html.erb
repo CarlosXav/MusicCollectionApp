@@ -1,0 +1,23 @@
+<nav class="navbar sticky-top navbar-expanded-lg bg-dark">
+    <div class="container">
+        <div class="d-flex align-left">
+            <tr class="d-flex list-inline">
+                <td class="list-inline-item"><a href="/" class="btn btn-dark text-light fs-5">Home</a></td>
+                <td class="list-inline-item"><a href="/users" class="btn btn-dark text-light fs-5">Users</a></td>
+                <td class="list-inline-item"><a href="/artists" class="btn btn-dark text-light fs-5">Artists</a></td>
+                <td class="list-inline-item"><a href="/albums" class="btn btn-dark text-light fs-5">Albums</a></td>
+            </tr>
+        </div>
+        <div class="d-flex align-right align-items-center">
+
+            <% if logged_in? %>
+                <%= link_to "#{current_user.first_name} (#{current_user.username})", user_path(current_user), class: "nav-link text-light m-2" %>
+                <%= link_to 'Log out', logout_path, class: "nav-link text-light m-2", data: { "turbo-method": :delete } %>
+            <% else %>
+                <a href="/login" class="btn btn-light text-dark">Log in</a>
+                <span class="text-light fw-light m-2">or</span>
+                <a class="text-primary ", href="/signup">Sign up</a>
+            <% end %>
+        </div>
+    </div>
+</nav>

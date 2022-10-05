@@ -1,0 +1,27 @@
+<% unless albums.blank? %>
+    <h2 class="text-center mt-4">Albums entries created by <%= @user["first_name"] %></h2>
+    <div class="py-3"></div>
+    <div class="container rounded shadow-lg p-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">Created in</th>
+                </tr>
+            </thead>
+            <% for album in albums %>
+                <tr>
+                    <th scope="row"><%= album['id']%></th>
+                    <td><%= link_to "#{album['name']}", "/albums/#{album['id']}" %></td>
+                    <td><%= link_to @artists[album['artist'].to_i - 1]['name'], "/artists/#{album['artist'].to_i}"%></td>
+                    <td><%= album['created_at'].strftime("%m/%d/%Y")%></td>
+                </tr>            
+            <% end %>
+        </table>
+    </div>
+
+
+<% end %>
+<div class="py-4"></div>

@@ -1,0 +1,25 @@
+<% unless albums.blank? %>
+    <h2 class="text-center mt-4">Albums by <%= @artist["name"] %></h2>
+    <div class="py-3"></div>
+    <div class="container rounded shadow-lg p-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Year</th>
+                </tr>
+            </thead>
+            <% for album in albums %>
+                <tr>
+                    <th scope="row"><%= album['id']%></th>
+                    <td><%= link_to "#{album['name']}", "/albums/#{album['id']}" %></td>
+                    <td><%= album['year']%></td>
+                </tr>            
+            <% end %>
+        </table>
+    </div>
+
+
+<% end %>
+<div class="py-4"></div>

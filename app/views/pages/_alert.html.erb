@@ -1,0 +1,14 @@
+<% unless notice.nil? %>
+    <script>
+        function remove_alert() {
+            var alert = document.getElementById('ALERT');
+            alert.remove();
+        }
+    </script>
+    <div class="container py-3" id="ALERT">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <%= notice %>
+            <button type="button" class="btn-close" onClick="remove_alert()"></button>
+        </div>
+    </div>
+<% end %>
