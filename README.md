@@ -28,7 +28,7 @@
 
 # User administrative permissions
 
-* By default, you can access a **root** user by loging in with the following credentials:
+* By default, you can access a **root** user by logging in with the following credentials:
     - *username*: root
     - *password*: password
 * Can be seen at their respective user pages (localhost:3000/users/<id>).
